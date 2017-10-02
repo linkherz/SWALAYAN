@@ -6,6 +6,7 @@
 package swalayan;
 
 import java.awt.Font;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -38,11 +39,6 @@ public class HalamanBarang extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        barangBtn = new javax.swing.JButton();
-        roBtn = new javax.swing.JButton();
-        poBtn = new javax.swing.JButton();
-        soBtn = new javax.swing.JButton();
-        recommendationBtn = new javax.swing.JButton();
         barangPanel = new javax.swing.JPanel();
         cariLbl = new javax.swing.JLabel();
         cariTxt = new javax.swing.JTextField();
@@ -60,47 +56,11 @@ public class HalamanBarang extends javax.swing.JFrame {
         pjLbl = new javax.swing.JLabel();
         namapjLbl = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        barangBtn1 = new javax.swing.JButton();
-        roBtn1 = new javax.swing.JButton();
-        poBtn1 = new javax.swing.JButton();
-        soBtn1 = new javax.swing.JButton();
-        recommendationBtn1 = new javax.swing.JButton();
-
-        barangBtn.setBackground(new java.awt.Color(80, 150, 37));
-        barangBtn.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
-        barangBtn.setForeground(new java.awt.Color(255, 255, 255));
-        barangBtn.setText("BARANG");
-
-        roBtn.setBackground(new java.awt.Color(179, 255, 179));
-        roBtn.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
-        roBtn.setText("<html>REQUEST\n<p>  ORDER</htm>");
-        roBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                roBtnActionPerformed(evt);
-            }
-        });
-
-        poBtn.setBackground(new java.awt.Color(179, 255, 179));
-        poBtn.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
-        poBtn.setText("<html>\nPURCHASE \n<p>ORDER\n</html>");
-        poBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                poBtnActionPerformed(evt);
-            }
-        });
-
-        soBtn.setBackground(new java.awt.Color(179, 255, 179));
-        soBtn.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
-        soBtn.setText("<html>\nSTOCK <p>\nOPNAME</html>");
-        soBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                soBtnActionPerformed(evt);
-            }
-        });
-
-        recommendationBtn.setBackground(new java.awt.Color(179, 255, 179));
-        recommendationBtn.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        recommendationBtn.setText("RECOMMENDATION");
+        barangBtn = new javax.swing.JButton();
+        roBtn = new javax.swing.JButton();
+        poBtn = new javax.swing.JButton();
+        soBtn = new javax.swing.JButton();
+        recommendationBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -265,41 +225,51 @@ public class HalamanBarang extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(144, 216, 99));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        barangBtn1.setBackground(new java.awt.Color(80, 150, 37));
-        barangBtn1.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
-        barangBtn1.setForeground(new java.awt.Color(255, 255, 255));
-        barangBtn1.setText("BARANG");
-        barangBtn1.addActionListener(new java.awt.event.ActionListener() {
+        barangBtn.setBackground(new java.awt.Color(80, 150, 37));
+        barangBtn.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        barangBtn.setForeground(new java.awt.Color(255, 255, 255));
+        barangBtn.setText("BARANG");
+        barangBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                barangBtn1ActionPerformed(evt);
+                barangBtnActionPerformed(evt);
             }
         });
 
-        roBtn1.setBackground(new java.awt.Color(179, 255, 179));
-        roBtn1.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
-        roBtn1.setText("<html>REQUEST\n<p>  ORDER</htm>");
-        roBtn1.addActionListener(new java.awt.event.ActionListener() {
+        roBtn.setBackground(new java.awt.Color(179, 255, 179));
+        roBtn.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
+        roBtn.setText("<html>REQUEST\n<p>  ORDER</htm>");
+        roBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                roBtn1ActionPerformed(evt);
+                roBtnActionPerformed(evt);
             }
         });
 
-        poBtn1.setBackground(new java.awt.Color(179, 255, 179));
-        poBtn1.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
-        poBtn1.setText("<html>\nPURCHASE \n<p>ORDER\n</html>");
-
-        soBtn1.setBackground(new java.awt.Color(179, 255, 179));
-        soBtn1.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
-        soBtn1.setText("<html>\nSTOCK <p>\nOPNAME</html>");
-        soBtn1.addActionListener(new java.awt.event.ActionListener() {
+        poBtn.setBackground(new java.awt.Color(179, 255, 179));
+        poBtn.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
+        poBtn.setText("<html>\nPURCHASE \n<p>ORDER\n</html>");
+        poBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                soBtn1ActionPerformed(evt);
+                poBtnActionPerformed(evt);
             }
         });
 
-        recommendationBtn1.setBackground(new java.awt.Color(179, 255, 179));
-        recommendationBtn1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        recommendationBtn1.setText("RECOMMENDATION");
+        soBtn.setBackground(new java.awt.Color(179, 255, 179));
+        soBtn.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
+        soBtn.setText("<html>\nSTOCK <p>\nOPNAME</html>");
+        soBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                soBtnActionPerformed(evt);
+            }
+        });
+
+        recommendationBtn.setBackground(new java.awt.Color(179, 255, 179));
+        recommendationBtn.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        recommendationBtn.setText("RECOMMENDATION");
+        recommendationBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recommendationBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -308,27 +278,27 @@ public class HalamanBarang extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(recommendationBtn1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(soBtn1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(recommendationBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(soBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(roBtn1)
-                        .addComponent(barangBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
-                        .addComponent(poBtn1)))
+                        .addComponent(roBtn)
+                        .addComponent(barangBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                        .addComponent(poBtn)))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(93, 93, 93)
-                .addComponent(barangBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(barangBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(roBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(roBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(poBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(poBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(soBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(soBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(recommendationBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(recommendationBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -372,29 +342,25 @@ public class HalamanBarang extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_msTxtActionPerformed
 
-    private void roBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roBtnActionPerformed
+    private void barangBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barangBtnActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_barangBtnActionPerformed
+
+    private void roBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roBtnActionPerformed
+        JOptionPane.showMessageDialog(null, "Maaf, fitur ini belum ditambahkan", "FITUR BELUM ADA", JOptionPane.WARNING_MESSAGE);
     }//GEN-LAST:event_roBtnActionPerformed
 
-    private void poBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_poBtnActionPerformed
-
     private void soBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soBtnActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Maaf, fitur ini belum ditambahkan", "FITUR BELUM ADA", JOptionPane.WARNING_MESSAGE);
     }//GEN-LAST:event_soBtnActionPerformed
 
-    private void barangBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barangBtn1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_barangBtn1ActionPerformed
+    private void poBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poBtnActionPerformed
+        JOptionPane.showMessageDialog(null, "Maaf, fitur ini belum ditambahkan", "FITUR BELUM ADA", JOptionPane.WARNING_MESSAGE);
+    }//GEN-LAST:event_poBtnActionPerformed
 
-    private void roBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roBtn1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_roBtn1ActionPerformed
-
-    private void soBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soBtn1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_soBtn1ActionPerformed
+    private void recommendationBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recommendationBtnActionPerformed
+        JOptionPane.showMessageDialog(null, "Maaf, fitur ini belum ditambahkan", "FITUR BELUM ADA", JOptionPane.WARNING_MESSAGE);
+    }//GEN-LAST:event_recommendationBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -433,7 +399,6 @@ public class HalamanBarang extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton barangBtn;
-    private javax.swing.JButton barangBtn1;
     private javax.swing.JPanel barangPanel;
     private javax.swing.JButton buatBtn;
     private javax.swing.JLabel cariLbl;
@@ -451,13 +416,9 @@ public class HalamanBarang extends javax.swing.JFrame {
     private javax.swing.JLabel namapjLbl;
     private javax.swing.JLabel pjLbl;
     private javax.swing.JButton poBtn;
-    private javax.swing.JButton poBtn1;
     private javax.swing.JButton recommendationBtn;
-    private javax.swing.JButton recommendationBtn1;
     private javax.swing.JButton roBtn;
-    private javax.swing.JButton roBtn1;
     private javax.swing.JTextField rpTxt;
     private javax.swing.JButton soBtn;
-    private javax.swing.JButton soBtn1;
     // End of variables declaration//GEN-END:variables
 }
