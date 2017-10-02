@@ -159,18 +159,18 @@ public class HalamanLogin extends javax.swing.JFrame {
         String username = usernameTxt.getText();
         String password = passwordTxt.getText();
         
+        System.out.println("HL : "+username+"-"+password);
+        
         boolean login = control.login(username, password);
         
         if(login){
-            MenuAwal m = new MenuAwal();
-            m.setVisible(true);
-            m.setExtendedState(JFrame.MAXIMIZED_BOTH);
             dispose();
         }
         else {
-            txtUsername.setText("");
-            txtPassword.setText("");
-            JOptionPane.showMessageDialog(null, "Username atau Password salah", "Wrong Pass", JOptionPane.ERROR_MESSAGE);
+            usernameTxt.setText("");
+            passwordTxt.setText("");
+            JOptionPane.showMessageDialog(null, "Username atau Password salah", "LOGIN GAGAL", JOptionPane.ERROR_MESSAGE);
+            usernameTxt.requestFocus();
         }
     }//GEN-LAST:event_loginBtnActionPerformed
 
