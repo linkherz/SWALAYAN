@@ -5,12 +5,16 @@
  */
 package swalayan;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usui Takumi
  */
 public class HalamanSistemInventory extends javax.swing.JFrame {
 
+    private SistemInventory control;
+    
     /**
      * Creates new form HalamanSistemInventory
      */
@@ -42,6 +46,11 @@ public class HalamanSistemInventory extends javax.swing.JFrame {
         barangBtn.setBackground(new java.awt.Color(179, 255, 179));
         barangBtn.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
         barangBtn.setText("BARANG");
+        barangBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                barangBtnActionPerformed(evt);
+            }
+        });
 
         roBtn.setBackground(new java.awt.Color(179, 255, 179));
         roBtn.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
@@ -73,6 +82,11 @@ public class HalamanSistemInventory extends javax.swing.JFrame {
         recommendationBtn.setBackground(new java.awt.Color(179, 255, 179));
         recommendationBtn.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         recommendationBtn.setText("RECOMMENDATION");
+        recommendationBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recommendationBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout SistemInventoryPanelLayout = new javax.swing.GroupLayout(SistemInventoryPanel);
         SistemInventoryPanel.setLayout(SistemInventoryPanelLayout);
@@ -126,16 +140,27 @@ public class HalamanSistemInventory extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void poBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poBtnActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Maaf, fitur ini belum ditambahkan", "FITUR BELUM ADA", JOptionPane.WARNING_MESSAGE);
     }//GEN-LAST:event_poBtnActionPerformed
 
     private void soBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_soBtnActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Maaf, fitur ini belum ditambahkan", "FITUR BELUM ADA", JOptionPane.WARNING_MESSAGE);
     }//GEN-LAST:event_soBtnActionPerformed
 
     private void roBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roBtnActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Maaf, fitur ini belum ditambahkan", "FITUR BELUM ADA", JOptionPane.WARNING_MESSAGE);
     }//GEN-LAST:event_roBtnActionPerformed
+
+    private void barangBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barangBtnActionPerformed
+        control = new SistemInventory();
+        
+        control.menampilkanHalamanBarang();
+        dispose();
+    }//GEN-LAST:event_barangBtnActionPerformed
+
+    private void recommendationBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recommendationBtnActionPerformed
+        JOptionPane.showMessageDialog(null, "Maaf, fitur ini belum ditambahkan", "FITUR BELUM ADA", JOptionPane.WARNING_MESSAGE);
+    }//GEN-LAST:event_recommendationBtnActionPerformed
 
     /**
      * @param args the command line arguments
