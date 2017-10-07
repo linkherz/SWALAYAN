@@ -1,0 +1,24 @@
+1. Swalayan memiliki aplikasi desktop
+2. Kasir bisa menjual barang melalui aplikasi
+3. a. Kasir bisa menambahkan barang di list belanja sebelum pembayaran
+    b. Kasir bisa menghapus barang di list belanja sebelum pembayaran 
+4. Kasir bisa membatalkan transaksi belanja sebelum pembayaran
+5. Kasir bisa menerima pembayaran dengan tunai, kartu kredit, ataupun kartu debit
+6. Admin kasir bisa membuat akun kasir yang berisi nama, username, dan password sehingga bisa login dengan username dan password.
+	a. Sistem harus menyimpan daftar akun kasir dalam database
+	b. ketika kasir login, username dan password harus cocok dengan username dan password pada database
+	c. ketik kasir login maka akan tertera nama kasir sebagai pihak yang bertanggung jawab atas transaksi
+7. Kasir bisa mencari barang dengan berdasarkan nama atau barcode, kemudian menampilkan detail barang
+8. Sistem dapat menyimpan detail dari suatu barang yang berisi nama, stock, harga, barcode.
+9. a. Inventory dapat menambahkan barang kepada database melalui aplikasi
+    b. Inventory dapat menghapus barang kepada database melalui aplikasi
+    c. Inventory dapat mengganti detail barang
+10. Sistem dapat membuat RO berdasarkan barang yang mencapai jumlah minimal stock
+11. Inventory dapat membuat PO yang berisi detail barang, jumlah, dan status berdasarkan RO
+12. Inventory dapat mengubah status PO dari belum terealisasi ketika membuat PO menjadi terealisasi ketika barang telah tiba
+13. Sistem dapat menambahkan stock barang berdasarkan jumlah barang pada PO yang terealisasi
+14. Inventory dapat mengisi formulir stock opname yang berisi nama, stock yang seharusnya dan stock yang asli.
+15. Admin Inventory bisa membuat akun inventory yang berisi nama, username, dan password sehingga bisa login dengan username dan password.
+	a. Sistem harus menyimpan daftar akun inventory dalam database
+	b. ketika inventory login, username dan password harus cocok dengan username dan password pada database
+	c. ketik inventory login maka akan tertera nama inventory sebagai pihak yang bertanggung jawab atas stock barang
