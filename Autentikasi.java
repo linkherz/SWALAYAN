@@ -5,15 +5,6 @@
  */
 package swalayanControl;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import swalayan.HalamanAdminInventory;
-import swalayan.HalamanLogin;
-import swalayan.HalamanSistemInventory;
 import swalayanControl.AkunInventory;
 
 
@@ -23,47 +14,24 @@ import swalayanControl.AkunInventory;
  */
 
 public class Autentikasi {
-    private ArrayList<AkunInventory> list = new ArrayList<AkunInventory>();
-        String [] title ={""};
-    private Connection connection;
-    private Statement statment;
-    private ResultSet resultAutentikasi;
-    private String user;
-    private String pass;
-    
-        public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-    
+    private AkunInventory database;
     
     public Autentikasi() {
-        try {
-            connection = DriverManager.getConnection("jdbc:ucanaccess://" + "D:/Kuliah/Semester 5/KPPL/Inventory.accdb;","", "");
-            System.out.println("Berhasil Konek");
-            
-            statment = connection.createStatement();
-            resultAutentikasi = statment.executeQuery("SELECT * FROM Account");
-            while (resultAutentikasi.next() == true){
-                list.add(new AkunInventory(resultAutentikasi.getString("Username"),
-                        resultAutentikasi.getString("Password"),
-                        resultAutentikasi.getString("Nama"),
-                        resultAutentikasi.getString("Role")));
-            }
-        } catch (SQLException errMsg){
-            System.out.println(errMsg.getMessage());
-        }
+        database = new AkunInventory();
+        
+    }
+    
+    public boolean Autentikasi(String user, String password) {
+        
+        String User = database.ambilData("Select Username FROM Account","username");
+        String Password = database.ambilData("Select Password FROM Account","password");
+        
+         System.out.println(User);
+         System.out.println(Password);
+        
+        if((User.equals(user)) && (Password.equals(password)))
+            return true;
+        else return false;
     }
     
     public void verifikasi(){
