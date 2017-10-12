@@ -5,57 +5,57 @@
  */
 package swalayanControl;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 /**
  *
  * @author USER
  */
 class AkunInventory {
-    private String Username;
-    private String Password;
-    private String Nama;
-    private String Role;
-    public AkunInventory(){}
-
-    public AkunInventory(String username, String password, String nama, String role) {
-        this.Username = username;
-        this.Password = password;
-        this.Nama = nama;
-        this.Role = role;
+    
+    Connection connect = null;
+    Statement statement;
+    ResultSet resultset;
+    
+    public AkunInventory(){
     }
     
+     public boolean nyambung(){
+         try {
+            connection = DriverManager.getConnection("jdbc:ucanaccess://"+"E:/Inventory.accdb;","","");
+            
+             statement = connect.createStatement();
+            
+            return true;
+            
+            } catch (SQLException errMsg) {   
+             System.out.println("ada kesalahan : "+ errMsg.getMessage());
+               
+             return false;
+            }
+    }
     
-    public String getUsername() {
-        return Username;
-    }
+    public String query(String sql,String dicari){
+        boolean connect = nyambung();
+                
+        if(connect){
+            try {
+                resultset = statement.executeQuery(sql);
+                while (resultset.next() == true){
+                String a = resultset.getString(dicari);
+                return a;
+                }               
 
-   
-    public void setUsername(String Username) {
-        this.Username = Username;
-    }
+                } catch (SQLException errMsg) {    
+                 System.out.println("ada kesalahan : "+ errMsg.getMessage());
 
-    public String getPassword() {
-        return Password;
-    }
-
-    public void setPassword(String Password) {
-        this.Password = Password;
-    }
-
-    public String getNama() {
-        return Nama;
-    }
-
-    public void setNama(String Nama) {
-        this.Nama = Nama;
-    }
-
-    public String getRole() {
-        return Role;
-    }
-
-   
-    public void setRole(String Role) {
-        this.Role = Role;
+                 return "";
+                }
+        }
+        return"";
     }
     
 }
