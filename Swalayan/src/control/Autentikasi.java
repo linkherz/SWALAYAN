@@ -21,46 +21,27 @@ public class Autentikasi {
         
     }
     
-    public boolean Autentikasi(String user, String password) {
-        
-        String User = database.ambilData("Select Username FROM Account","username");
-        String Password = database.ambilData("Select Password FROM Account","password");
-        
-         System.out.println(User);
-         System.out.println(Password);
-        
+    public void verifikasi(){
+
+        String User = database.query("Select Username FROM Account","username");
+        String Password = database.query("Select Password FROM Account","password");
+                
         if((User.equals(user)) && (Password.equals(password)))
             return true;
         else return false;
+        
     }
     
-    public void verifikasi(){
-        AkunInventory verify = new AkunInventory();
-        String sql ;
-        
-        sql = "SELECT *" +"FROM Account" + 
-                "WHERE ('" + user + "',"
-                + "'" + pass + "');";
-        
-        System.out.println(sql);
-        verify.setUsername(user);
-        verify.setPassword(pass);
-        this.list.add(verify);
-        
-//        if (role.contains("admin")) {
-//            halamanAdmin();
-//        }else if (role.contains("personal")) {
-//            halamanSystem();
-//        }
-    }
-    private void halamanSystem(){
+    public void halamanSystem(){
         HalamanSistemInventory guiInv = new HalamanSistemInventory();
         guiInv.setVisible(true);
     }
-    private void halamanAdmin(){
+    
+    public void halamanAdmin(){
         HalamanAdminInventory guiAdm = new HalamanAdminInventory();
         guiAdm.setVisible(true);
     }
+    
     public void logOut(){
         HalamanLogin guiLout = new HalamanLogin();
         guiLout.setVisible(true);
