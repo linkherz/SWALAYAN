@@ -5,86 +5,81 @@
  */
 package swalayanControl;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author USER
  */
 class DataBarang {
-    private String kodeBarang;
-    private String namaBarang;
-    private String Kategori;
-    private String Harga;
-    private String Stock;
-    private String jumlahMS;
-    private String jumlahRP;
-    public DataBarang(){}
-
-    public DataBarang(String kode, String namabrg, String kategori, String harga, String stock, String jumlahms, String jumlahrp) {
-        this.kodeBarang = kode;
-        this.namaBarang = namabrg;
-        this.Kategori = kategori;
-        this.Harga = harga;
-        this.Stock = stock;
-        this.jumlahMS = jumlahms;
-        this.jumlahRP = jumlahrp;
-    }
-    
-    
-    public String getkodeBarang() {
-        return kodeBarang;
-    }
-
    
-    public void setkodeBarang(String kodeBarang) {
-        this.kodeBarang = kodeBarang;
-    }
-
-    public String getnamaBarang() {
-        return namaBarang;
-    }
-
-    public void setnamaBarang(String namaBarang) {
-        this.namaBarang = namaBarang;
-    }
-
-    public String getKategori() {
-        return Kategori;
-    }
-
-    public void setKategori(String Kategori) {
-        this.Kategori = Kategori;
-    }
-
-    public String getHarga() {
-        return Harga;
-    }
-
-   
-    public void setHarga(String Harga) {
-        this.Harga = Harga;
+    Connection connection;
+    Statement statement;
+    ResultSet resultset;
+    boolean connect;
+    
+    public DataBarang(){
+    
     }
     
-    public String getStock() {
-        return Stock;
+    public boolean nyambung(){
+         try {
+            
+             connection = DriverManager.getConnection("jdbc:ucanaccess://"+"F:/Inventory.accdb;","","");
+             statement = connection.createStatement();
+            
+            return true;
+            
+        } catch (SQLException errMsg) {
+           System.out.println("ada kesalahan : "+ errMsg.getMessage());
+           return false;
+        }
     }
     
-    public void setStock (String Stock) {
-        this.Stock = Stock;
+    public boolean InputBarang(String sql){
+        connect = nyambung();
+        
+        if(connect){
+            try{
+               int berhasil = statement.executeUpdate(sql);
+
+                return true;
+
+            }
+            catch (SQLException errMsg) {
+               System.out.println("ada kesalahan : "+ errMsg.getMessage());
+
+            return false;
+            }
+        } else return false;
     }
     
-    public String getjumlahMS(){
-        return jumlahMS;
+    public Object[] LihatTabel(int index){
+        connect=nyambung();
+        
+        Object[] data = new Object[7];
+        
+        if(connect){
+            try {
+                ResultSet rsLogTransaksi = statement.executeQuery("SELECT * from Inventory");
+                rsLogTransaksi.next();
+                        data[0]=rsLogTransaksi.getString("Kode");
+                        data[1]=rsLogTransaksi.getString("NamaBRG");
+                        data[2]=rsLogTransaksi.getString("Kategori");
+                        data[3]=rsLogTransaksi.getString("Harga");
+                        data[4]=rsLogTransaksi.getString("Stock");
+                        data[5]=rsLogTransaksi.getString("JumlahMS");
+                        data[6]=rsLogTransaksi.getString("JumlahRP");
+            } catch (SQLException ex) {
+                Logger.getLogger(Test2DB.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } return data;
     }
     
-    public void setjumlahMS(String jumlahMs) {
-        this.jumlahMS = jumlahMs;
-    }
-    
-    public String getjumlahRP(){
-        return jumlahRP;
-    }
-    
-    public void setjumlahRP (String jumlahRP){
-        this.jumlahRP = jumlahRP;
-    }
 }
