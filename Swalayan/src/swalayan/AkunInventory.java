@@ -10,8 +10,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -76,28 +74,28 @@ public class AkunInventory {
         } else return false;
     }
     
-    public Object[][] lihatAkun(int index){
-        connect = connectDB();
-        Object[][] dataAkun = new Object[10][4];
-        if(connect){ //kalau bisa konek
-            try {
-                ResultSet rsAkun = stmt.executeQuery("SELECT * from InventoryAccount");
-                for (int i = 0; i < dataAkun.length; i++) rsAkun.next();
-                for (int i = 0; i < dataAkun.length; i++) {
-                    if(rsAkun.next()) {
-                        dataAkun[i][0] = rsAkun.getString("Username");
-                        dataAkun[i][1] = rsAkun.getString("Password");
-                        dataAkun[i][2] = rsAkun.getString("Nama");
-                        dataAkun[i][3] = rsAkun.getString("Role");
-                    } else break;
-                }
-            } catch (SQLException errMsg) {
-                System.out.println("Kesalahan AkunInventory.lihatAkun : " + errMsg.getMessage());
-                Logger.getLogger(AkunInventory.class.getName()).log(Level.SEVERE, null, errMsg);
-            }
-        }
-        return dataAkun;
-    }
+//    public Object[][] lihatAkun(int index){
+//        connect = connectDB();
+//        Object[][] dataAkun = new Object[10][4];
+//        if(connect){ //kalau bisa konek
+//            try {
+//                ResultSet rsAkun = stmt.executeQuery("SELECT * from InventoryAccount");
+//                for (int i = 0; i < dataAkun.length; i++) rsAkun.next();
+//                for (int i = 0; i < dataAkun.length; i++) {
+//                    if(rsAkun.next()) {
+//                        dataAkun[i][0] = rsAkun.getString("Username");
+//                        dataAkun[i][1] = rsAkun.getString("Password");
+//                        dataAkun[i][2] = rsAkun.getString("Nama");
+//                        dataAkun[i][3] = rsAkun.getString("Role");
+//                    } else break;
+//                }
+//            } catch (SQLException errMsg) {
+//                System.out.println("Kesalahan AkunInventory.lihatAkun : " + errMsg.getMessage());
+//                Logger.getLogger(AkunInventory.class.getName()).log(Level.SEVERE, null, errMsg);
+//            }
+//        }
+//        return dataAkun;
+//    }
     
     public boolean ubahAkun(String sql){
         connect = connectDB();
