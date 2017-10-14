@@ -27,22 +27,22 @@ public class Autentikasi {
         String role     = akunInventory.getAkun(user, pass, "Role");
            
         if((username.equals(user)) && (password.equals(pass))) {
-            if(role.equalsIgnoreCase("admin")) menampilkanHalamanSistemAdminInventory();
-            else menampilkanHalamanSistemInventory();
+            if(role.equalsIgnoreCase("admin")) menampilkanHalamanSistemAdminInventory(user);
+            else menampilkanHalamanSistemInventory(user);
             
             return true;
         }
         else return false;
     }
     
-    public void menampilkanHalamanSistemInventory(){
+    public void menampilkanHalamanSistemInventory(String u){
         System.out.println("role : user");
-        HalamanSistemInventory hlmSI = new HalamanSistemInventory();
+        HalamanSistemInventory hlmSI = new HalamanSistemInventory(u);
         hlmSI.setVisible(true);
         hlmSI.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
     
-    public void menampilkanHalamanSistemAdminInventory(){
+    public void menampilkanHalamanSistemAdminInventory(String u){
         System.out.println("role : admin");
         HalamanAdminInventory hlmAI = new HalamanAdminInventory();
         hlmAI.setVisible(true);
