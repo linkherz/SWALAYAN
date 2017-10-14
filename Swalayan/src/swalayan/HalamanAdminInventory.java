@@ -5,9 +5,6 @@
  */
 package swalayan;
 
-import java.awt.Font;
-import javax.swing.JTable;
-
 /**
  *
  * @author Usui Takumi
@@ -19,13 +16,8 @@ public class HalamanAdminInventory extends javax.swing.JFrame {
      */
     public HalamanAdminInventory() {
         initComponents();
-        userTbl.getTableHeader().setFont(new Font("SansSerif", Font.BOLD, 25));
-        //userTbl.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        userTbl.getColumnModel().getColumn(0).setPreferredWidth(200);
-        userTbl.getColumnModel().getColumn(1).setPreferredWidth(544);
-        userTbl.getColumnModel().getColumn(2).setPreferredWidth(544);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,14 +30,9 @@ public class HalamanAdminInventory extends javax.swing.JFrame {
         adminInventoryPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         logoutBtn = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        userTbl = new javax.swing.JTable();
-        usernameTxt = new javax.swing.JTextField();
-        namaTxt = new javax.swing.JTextField();
-        buatTxt = new javax.swing.JButton();
         pjTxt = new javax.swing.JLabel();
         namapjTxt = new javax.swing.JLabel();
-        passwordTxt = new javax.swing.JPasswordField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,40 +52,6 @@ public class HalamanAdminInventory extends javax.swing.JFrame {
             }
         });
 
-        userTbl.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        userTbl.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "No", "Username Inventory", "Nama Petugas Inventory"
-            }
-        ));
-        jScrollPane1.setViewportView(userTbl);
-
-        usernameTxt.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        usernameTxt.setText("Username");
-        usernameTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameTxtActionPerformed(evt);
-            }
-        });
-
-        namaTxt.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        namaTxt.setText("Nama");
-        namaTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                namaTxtActionPerformed(evt);
-            }
-        });
-
-        buatTxt.setBackground(new java.awt.Color(179, 255, 179));
-        buatTxt.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        buatTxt.setText("BUAT");
-
         pjTxt.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         pjTxt.setForeground(new java.awt.Color(255, 255, 255));
         pjTxt.setText("Penanggung Jawab : ");
@@ -107,8 +60,9 @@ public class HalamanAdminInventory extends javax.swing.JFrame {
         namapjTxt.setForeground(new java.awt.Color(255, 255, 255));
         namapjTxt.setText("namaPJ");
 
-        passwordTxt.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        passwordTxt.setText("password");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 59)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Selamat Login sebagai Admin :)");
 
         javax.swing.GroupLayout adminInventoryPanelLayout = new javax.swing.GroupLayout(adminInventoryPanel);
         adminInventoryPanel.setLayout(adminInventoryPanelLayout);
@@ -118,9 +72,6 @@ public class HalamanAdminInventory extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(adminInventoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(adminInventoryPanelLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())
-                    .addGroup(adminInventoryPanelLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(logoutBtn)
@@ -129,16 +80,11 @@ public class HalamanAdminInventory extends javax.swing.JFrame {
                         .addComponent(pjTxt)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(namapjTxt)
-                        .addGap(0, 1032, Short.MAX_VALUE))
-                    .addGroup(adminInventoryPanelLayout.createSequentialGroup()
-                        .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(namaTxt)
-                        .addGap(18, 18, 18)
-                        .addComponent(buatTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminInventoryPanelLayout.createSequentialGroup()
+                .addContainerGap(248, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(243, 243, 243))
         );
         adminInventoryPanelLayout.setVerticalGroup(
             adminInventoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,15 +93,9 @@ public class HalamanAdminInventory extends javax.swing.JFrame {
                 .addGroup(adminInventoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(logoutBtn)
                     .addComponent(jLabel1))
-                .addGap(46, 46, 46)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
-                .addGroup(adminInventoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(namaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buatTxt))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addGap(169, 169, 169)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 322, Short.MAX_VALUE)
                 .addGroup(adminInventoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pjTxt)
                     .addComponent(namapjTxt))
@@ -185,14 +125,6 @@ public class HalamanAdminInventory extends javax.swing.JFrame {
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_logoutBtnActionPerformed
-
-    private void usernameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTxtActionPerformed
-
-    private void namaTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_namaTxtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,15 +164,10 @@ public class HalamanAdminInventory extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel adminInventoryPanel;
-    private javax.swing.JButton buatTxt;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton logoutBtn;
-    private javax.swing.JTextField namaTxt;
     private javax.swing.JLabel namapjTxt;
-    private javax.swing.JPasswordField passwordTxt;
     private javax.swing.JLabel pjTxt;
-    private javax.swing.JTable userTbl;
-    private javax.swing.JTextField usernameTxt;
     // End of variables declaration//GEN-END:variables
 }
