@@ -5,7 +5,7 @@
  */
 package swalayan;
 
-import javax.swing.JFrame;
+import com.placeholder.PlaceHolder;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,6 +21,8 @@ public class HalamanLogin extends javax.swing.JFrame {
      */
     public HalamanLogin() {
         initComponents();
+        PlaceHolder user = new PlaceHolder(usernameTxt, "Username");
+        PlaceHolder pwd = new PlaceHolder(passwordTxt, "Password");
     }
 
     /**
@@ -211,6 +213,7 @@ public class HalamanLogin extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new HalamanLogin().setVisible(true);
             }
