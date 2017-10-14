@@ -14,11 +14,12 @@ import javax.swing.JOptionPane;
 public class HalamanSistemInventory extends javax.swing.JFrame {
 
     private SistemInventory control;
-    
+    private static String username;
     /**
      * Creates new form HalamanSistemInventory
      */
-    public HalamanSistemInventory() {
+    public HalamanSistemInventory(String u) {
+        this.username = u;
         initComponents();
     }
 
@@ -152,7 +153,7 @@ public class HalamanSistemInventory extends javax.swing.JFrame {
     }//GEN-LAST:event_roBtnActionPerformed
 
     private void barangBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barangBtnActionPerformed
-        control = new SistemInventory();
+        control = new SistemInventory(username);
         
         control.menampilkanHalamanBarang();
         dispose();
@@ -192,7 +193,7 @@ public class HalamanSistemInventory extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HalamanSistemInventory().setVisible(true);
+                new HalamanSistemInventory(username).setVisible(true);
             }
         });
     }
