@@ -6,6 +6,7 @@
 package swalayan;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,8 +26,13 @@ public class Autentikasi {
         String username = akunInventory.getAkun(user, pass, "Username");
         String password = akunInventory.getAkun(user, pass, "Password");
         String role     = akunInventory.getAkun(user, pass, "Role");
-           
-        if((username.equals(user)) && (password.equals(pass))) {
+        
+        if (username=="" || password=="") {
+            JOptionPane.showMessageDialog(null, "Harap mengisi username dan password", "LOGIN GAGAL", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        
+        else if((username.equals(user)) && (password.equals(pass))) {
             if(role.equalsIgnoreCase("admin")) menampilkanHalamanSistemAdminInventory(user);
             else menampilkanHalamanSistemInventory(user);
             
@@ -47,5 +53,11 @@ public class Autentikasi {
         HalamanAdminInventory hlmAI = new HalamanAdminInventory();
         hlmAI.setVisible(true);
         hlmAI.setExtendedState(JFrame.MAXIMIZED_BOTH);
+    }
+    
+    public static void menampilkanHalamanLogin(){
+        HalamanLogin hlmL = new HalamanLogin();
+        hlmL.setVisible(true);
+        hlmL.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 }
