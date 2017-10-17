@@ -440,8 +440,8 @@ public class HalamanBarang extends javax.swing.JFrame {
         
         boolean update = control.updateBarang(kode, nama, kategori, harga, stock, ms, rp);
         
-        if(update) JOptionPane.showMessageDialog(null,"dengan Kode "+kode+", Berhasil di update", "UPDATE", JOptionPane.PLAIN_MESSAGE);
-        else JOptionPane.showMessageDialog(null,"dengan Kode "+kode+", Gagal di update", "UPDATE", JOptionPane.ERROR_MESSAGE);
+        if(update) JOptionPane.showMessageDialog(null,"Barang dengan Kode "+kode+", Berhasil di update", "UPDATE", JOptionPane.PLAIN_MESSAGE);
+        else JOptionPane.showMessageDialog(null,"Barang dengan Kode "+kode+", Gagal di update", "UPDATE", JOptionPane.ERROR_MESSAGE);
         
         updateTable();
     }//GEN-LAST:event_ubahBtnActionPerformed
