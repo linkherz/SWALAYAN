@@ -66,6 +66,19 @@ public class AkunInventoryIT {
         // TODO review the generated test code and remove the default call to fail.
 
     }
+    @Test
+    public void testGetAkun2() {
+        System.out.println("getAkun2");
+        String username = "dimcan";
+        String password = "789";
+        String dicari = "Role";
+        AkunInventory instance = new AkunInventory();
+        String expResult = "personal";
+        String result = instance.getAkun(username, password, dicari);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+
+    }
 
     /**
      * Test of tambahAkun method, of class AkunInventory.
@@ -73,9 +86,19 @@ public class AkunInventoryIT {
     @Test
     public void testTambahAkun() {
         System.out.println("tambahAkun");
-        String sql = "INSERT INTO Account VALUES ('kppwqze', '156', 'kfssel', 'user', '19');";
+        String sql = "INSERT INTO Account VALUES ('kppwqze', '156', 'nama', 'user');";
         AkunInventory instance = new AkunInventory();
         boolean expResult = true;
+        boolean result = instance.tambahAkun(sql);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    @Test
+    public void testTambahAkun2() {
+        System.out.println("tambahAkun2");
+        String sql = "INSERT INTO Account VALUES ('kppwqze', '156', 'kfssel', 'user', '19');";
+        AkunInventory instance = new AkunInventory();
+        boolean expResult = false;
         boolean result = instance.tambahAkun(sql);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.

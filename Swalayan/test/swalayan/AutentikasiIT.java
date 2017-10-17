@@ -52,6 +52,54 @@ public class AutentikasiIT {
         // TODO review the generated test code and remove the default call to fail.
     }
 
+    @Test
+    public void testLogin2() {
+        System.out.println("login user password kosong");
+        String user = "";
+        String pass = "";
+        Autentikasi instance = new Autentikasi();
+        boolean expResult = false;
+        boolean result = instance.login(user, pass);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    
+    @Test
+    public void testLogin3() {
+        System.out.println("login user benar pass salah");
+        String user = "luqman";
+        String pass = "luqman";
+        Autentikasi instance = new Autentikasi();
+        boolean expResult = false;
+        boolean result = instance.login(user, pass);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    
+    @Test
+    public void testLogin4() {
+        System.out.println("login hanya username");
+        String user = "luqman";
+        String pass = "";
+        Autentikasi instance = new Autentikasi();
+        boolean expResult = false;
+        boolean result = instance.login(user, pass);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    
+    @Test
+    public void testLogin5() {
+        System.out.println("login username uppercase");
+        String user = "LUQMAN";
+        String pass = "321";
+        Autentikasi instance = new Autentikasi();
+        boolean expResult = false;
+        boolean result = instance.login(user, pass);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    
     /**
      * Test of menampilkanHalamanSistemInventory method, of class Autentikasi.
      */
