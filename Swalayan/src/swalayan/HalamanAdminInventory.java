@@ -13,7 +13,7 @@ import javax.swing.JFrame;
  */
 public class HalamanAdminInventory extends javax.swing.JFrame {
 
-        private SistemInventory tampil;
+
     /**
      * Creates new form HalamanBarang
      */
