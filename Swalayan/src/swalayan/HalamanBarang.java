@@ -5,7 +5,7 @@
  */
 package swalayan;
 
-import com.placeholder.PlaceHolder;
+
 import java.awt.Font;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -32,7 +32,6 @@ public class HalamanBarang extends javax.swing.JFrame {
         control = new SistemInventory(u);
         data = new Object[15][7];
         
-        resetTable();
         updateTable();
     }
 
@@ -51,15 +50,7 @@ public class HalamanBarang extends javax.swing.JFrame {
         kodebarangTxt.requestFocus();
     }
     
-    public void resetTable(){
-        PlaceHolder kode = new PlaceHolder(kodebarangTxt, "Kode Barang");
-        PlaceHolder nama = new PlaceHolder(namabarangTxt, "Nama Barang");
-        PlaceHolder kategori = new PlaceHolder(kategoriTxt, "Kategori");
-        PlaceHolder harga = new PlaceHolder(hargaTxt, "Harga");
-        PlaceHolder stock = new PlaceHolder(stockTxt, "Stock");
-        PlaceHolder ms = new PlaceHolder(msTxt, "MS");
-        PlaceHolder rp = new PlaceHolder(rpTxt, "RP");
-    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -368,7 +359,8 @@ public class HalamanBarang extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
-        
+        control.menampilkanHalamanLogin();
+        dispose();
     }//GEN-LAST:event_logoutBtnActionPerformed
 
     private void kodebarangTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kodebarangTxtActionPerformed
@@ -419,7 +411,7 @@ public class HalamanBarang extends javax.swing.JFrame {
         if(tambah) JOptionPane.showMessageDialog(null,"Barang dengan Kode "+kode+", Berhasil di tambahkan", "TAMBAH", JOptionPane.PLAIN_MESSAGE);
         else JOptionPane.showMessageDialog(null,"Barang dengan Kode "+kode+", Gagal di Tambahkan", "GAGAL", JOptionPane.ERROR_MESSAGE);
         
-        resetTable();
+        
         updateTable();
     }//GEN-LAST:event_buatBtnActionPerformed
 
@@ -431,7 +423,7 @@ public class HalamanBarang extends javax.swing.JFrame {
         if(hapus) JOptionPane.showMessageDialog(null,"Barang dengan Kode "+kode+", Berhasil di hapus", "HAPUS", JOptionPane.PLAIN_MESSAGE);
         else JOptionPane.showMessageDialog(null,"Barang dengan Kode "+kode+", Gagal di hapus", "GAGAL", JOptionPane.ERROR_MESSAGE);
         
-        resetTable();
+        
         updateTable();
     }//GEN-LAST:event_hapusBtnActionPerformed
 
@@ -451,7 +443,6 @@ public class HalamanBarang extends javax.swing.JFrame {
         if(update) JOptionPane.showMessageDialog(null,"dengan Kode "+kode+", Berhasil di update", "UPDATE", JOptionPane.PLAIN_MESSAGE);
         else JOptionPane.showMessageDialog(null,"dengan Kode "+kode+", Gagal di update", "UPDATE", JOptionPane.ERROR_MESSAGE);
         
-        resetTable();
         updateTable();
     }//GEN-LAST:event_ubahBtnActionPerformed
 

@@ -5,7 +5,7 @@
  */
 package swalayan;
 
-import com.placeholder.PlaceHolder;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -21,8 +21,7 @@ public class HalamanLogin extends javax.swing.JFrame {
      */
     public HalamanLogin() {
         initComponents();
-        PlaceHolder user = new PlaceHolder(usernameTxt, "Username");
-        PlaceHolder pwd = new PlaceHolder(passwordTxt, "Password");
+        
     }
 
     /**
