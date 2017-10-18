@@ -28,7 +28,6 @@ public class Autentikasi {
         String role     = akunInventory.getAkun(user, pass, "Role");
         
         if (username=="" || password=="") {
-            JOptionPane.showMessageDialog(null, "Harap mengisi username dan password", "LOGIN GAGAL", JOptionPane.ERROR_MESSAGE);
             return false;
         }
         

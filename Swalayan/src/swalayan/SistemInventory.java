@@ -42,6 +42,7 @@ public class SistemInventory {
     }
     
     public boolean updateBarang(String kode, String nama, String kategori, String harga, String stock, String ms, String rp){
+        
         String sql="UPDATE Inventory SET "
                 +"NamaBRG = '"+nama+"',"
                 +"Kategori = '"+kategori+"',"
@@ -66,5 +67,11 @@ public class SistemInventory {
         HalamanBarang hlmB = new HalamanBarang(username);
         hlmB.setVisible(true);
         hlmB.setExtendedState(JFrame.MAXIMIZED_BOTH);
+    }
+    
+    public static void menampilkanHalamanLogin(){
+        HalamanLogin hlmL = new HalamanLogin();
+        hlmL.setVisible(true);
+        hlmL.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 }
