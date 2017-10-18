@@ -5,7 +5,6 @@
  */
 package swalayan;
 
-import javax.swing.JFrame;
 
 /**
  *
@@ -13,7 +12,7 @@ import javax.swing.JFrame;
  */
 public class HalamanAdminInventory extends javax.swing.JFrame {
 
-
+    private static String username;
     /**
      * Creates new form HalamanBarang
      */
@@ -127,9 +126,8 @@ public class HalamanAdminInventory extends javax.swing.JFrame {
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         // TODO add your handling code here:
-        HalamanLogin hlmL = new HalamanLogin();
-        hlmL.setVisible(true);
-        hlmL.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        SistemInventory control = new SistemInventory(username);
+        control.menampilkanHalamanLogin();
         dispose();
     }//GEN-LAST:event_logoutBtnActionPerformed
 

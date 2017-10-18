@@ -69,7 +69,7 @@ public class SistemInventory {
         hlmB.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
     
-    public static void menampilkanHalamanLogin(){
+    public void menampilkanHalamanLogin(){
         HalamanLogin hlmL = new HalamanLogin();
         hlmL.setVisible(true);
         hlmL.setExtendedState(JFrame.MAXIMIZED_BOTH);
