@@ -18,6 +18,8 @@ import static org.junit.Assert.*;
  */
 public class SistemInventoryIT {
     
+    private static String username;
+    
     public SistemInventoryIT() {
     }
     
@@ -43,19 +45,20 @@ public class SistemInventoryIT {
     @Test
     public void testTambahBarang() {
         System.out.println("tambahBarang");
-        String kode = "";
-        String nama = "";
-        String kategori = "";
-        String harga = "";
-        String stock = "";
-        String ms = "";
-        String rp = "";
-        SistemInventory instance = null;
-        boolean expResult = false;
+        String kode = "9";
+        String nama = "tes";
+        String kategori = "kategori";
+        String harga = "100";
+        String stock = "2";
+        String ms = "4";
+        String rp = "5";
+        SistemInventory instance = new SistemInventory(username);
+        boolean expResult = true;
         boolean result = instance.tambahBarang(kode, nama, kategori, harga, stock, ms, rp);
         assertEquals(expResult, result);
+        // habis create harus dihapus
+        //boolean hapus = instance.hapusBarang(kode);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -64,12 +67,12 @@ public class SistemInventoryIT {
     @Test
     public void testLihatBarang() {
         System.out.println("lihatBarang");
-        SistemInventory instance = null;
+        SistemInventory instance = new SistemInventory(username);
         Object[][] expResult = null;
         Object[][] result = instance.lihatBarang();
         assertArrayEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -78,19 +81,19 @@ public class SistemInventoryIT {
     @Test
     public void testUpdateBarang() {
         System.out.println("updateBarang");
-        String kode = "";
-        String nama = "";
-        String kategori = "";
-        String harga = "";
-        String stock = "";
-        String ms = "";
-        String rp = "";
-        SistemInventory instance = null;
-        boolean expResult = false;
+        String kode = "9";
+        String nama = "tesnya";
+        String kategori = "kategorinya";
+        String harga = "2";
+        String stock = "20";
+        String ms = "2";
+        String rp = "200";
+        SistemInventory instance = new SistemInventory(username);
+        boolean expResult = true;
         boolean result = instance.updateBarang(kode, nama, kategori, harga, stock, ms, rp);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -99,13 +102,13 @@ public class SistemInventoryIT {
     @Test
     public void testHapusBarang() {
         System.out.println("hapusBarang");
-        String kode = "";
-        SistemInventory instance = null;
-        boolean expResult = false;
+        String kode = "9";
+        SistemInventory instance = new SistemInventory(username);
+        boolean expResult = true;
         boolean result = instance.hapusBarang(kode);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    
     }
 
     /**
@@ -114,10 +117,10 @@ public class SistemInventoryIT {
     @Test
     public void testMenampilkanHalamanBarang() {
         System.out.println("menampilkanHalamanBarang");
-        SistemInventory instance = null;
+        SistemInventory instance = new SistemInventory(username);
         instance.menampilkanHalamanBarang();
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
     
 }
