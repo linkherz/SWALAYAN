@@ -100,6 +100,18 @@ public class AutentikasiIT {
         // TODO review the generated test code and remove the default call to fail.
     }
     
+    @Test
+    public void testLogin6() {
+        System.out.println("login username uppercase");
+        String user = "\" or \"\"=\"";
+        String pass = "\" or \"\"=\"";
+        Autentikasi instance = new Autentikasi();
+        boolean expResult = false;
+        boolean result = instance.login(user, pass);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    
     /**
      * Test of menampilkanHalamanSistemInventory method, of class Autentikasi.
      */
