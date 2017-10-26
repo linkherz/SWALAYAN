@@ -134,6 +134,5 @@ public class AutentikasiIT {
         Autentikasi instance = new Autentikasi();
         instance.menampilkanHalamanSistemAdminInventory(u);
         // TODO review the generated test code and remove the default call to fail.
-    }
-    
+    }   
 }
