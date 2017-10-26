@@ -56,10 +56,13 @@ public class DataBarangIT {
     @Test
     public void testLihatBarang() {
         System.out.println("lihatBarang");
+        String exp = "1", res = "";
         DataBarang instance = new DataBarang();
         Object[][] expResult = null;
         Object[][] result = instance.lihatBarang();
-        assertArrayEquals(expResult, result);
+        res = result[0][0].toString();
+        assertEquals(exp, res);
+        assertNotNull(result);
         // TODO review the generated test code and remove the default call to fail.
     }
 
@@ -76,5 +79,5 @@ public class DataBarangIT {
         boolean result = instance.crdBarang(sql);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-    }   
+    }
 }
