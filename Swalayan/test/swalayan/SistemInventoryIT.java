@@ -44,18 +44,23 @@ public class SistemInventoryIT {
      */
     @Test
     public void testTambahBarang() {
-        System.out.println("tambahBarang");
-        String kode = "9";
-        String nama = "tes";
-        String kategori = "kategori";
-        String harga = "100";
-        String stock = "2";
-        String ms = "4";
-        String rp = "5";
+        DataBarang ins = new DataBarang();
         SistemInventory instance = new SistemInventory(username);
+        int awal = 0, akhir = 0;
+        System.out.println("tambahBarang");
+        String kode = "10";
+        String nama = "Tes";
+        String kategori = "ATK";
+        String harga = "50000";
+        String stock = "3";
+        String ms = "0";
+        String rp = "2";
+        awal = ins.getTotal(kode, kategori, nama, harga, stock, ms, rp);
         boolean expResult = true;
         boolean result = instance.tambahBarang(kode, nama, kategori, harga, stock, ms, rp);
-        assertEquals(expResult, result);
+        akhir = ins.getTotal(kode, kategori, nama, harga, stock, ms, rp);
+        System.out.println("a"+akhir);
+        assertEquals(akhir, awal+1);
         // habis create harus dihapus
         //boolean hapus = instance.hapusBarang(kode);
         // TODO review the generated test code and remove the default call to fail.
@@ -68,11 +73,11 @@ public class SistemInventoryIT {
     public void testLihatBarang() {
         System.out.println("lihatBarang");
         SistemInventory instance = new SistemInventory(username);
-        Object[][] expResult = null;
+        String exp = "1", res = "";
         Object[][] result = instance.lihatBarang();
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-
+        res = result[0][0].toString();
+        assertEquals(exp, res);
+        // TODO review the generated test code and remove the default call to fail;
     }
 
     /**
@@ -80,20 +85,24 @@ public class SistemInventoryIT {
      */
     @Test
     public void testUpdateBarang() {
+        DataBarang ins = new DataBarang();
+        SistemInventory instance = new SistemInventory(username);
+        int awal = 0, akhir = 0;
         System.out.println("updateBarang");
-        String kode = "9";
-        String nama = "tesnya";
-        String kategori = "kategorinya";
-        String harga = "2";
-        String stock = "20";
+        String kode = "4";
+        String nama = "Buku";
+        String kategori = "ATKs";
+        String harga = "4500";
+        String stock = "10";
         String ms = "2";
         String rp = "200";
-        SistemInventory instance = new SistemInventory(username);
+        awal = ins.getTotal(kode, kategori, nama, harga, stock, ms, rp);
         boolean expResult = true;
         boolean result = instance.updateBarang(kode, nama, kategori, harga, stock, ms, rp);
-        assertEquals(expResult, result);
+        akhir = ins.getTotal(kode, kategori, nama, harga, stock, ms, rp);
+        //System.out.println(awal+"-"+akhir);
+        assertEquals(akhir, awal+1);
         // TODO review the generated test code and remove the default call to fail.
-
     }
 
     /**
@@ -101,14 +110,23 @@ public class SistemInventoryIT {
      */
     @Test
     public void testHapusBarang() {
-        System.out.println("hapusBarang");
-        String kode = "9";
+        DataBarang ins = new DataBarang();
         SistemInventory instance = new SistemInventory(username);
+        int awal = 0, akhir = 0;
+        int awal2 = 0, akhir2 = 0;
+        System.out.println("hapusBarang");
+        String kode = "10";
+        awal = ins.getTotal2(kode);
+        awal2 = ins.getTotal3();
         boolean expResult = true;
         boolean result = instance.hapusBarang(kode);
-        assertEquals(expResult, result);
+        akhir = ins.getTotal2(kode);
+        akhir2 = ins.getTotal3();
+//        System.out.println("-"+awal);
+//        System.out.println("-"+akhir);
+        assertEquals(akhir, awal-1);
+        assertEquals(akhir2, awal2-1);
         // TODO review the generated test code and remove the default call to fail.
-    
     }
 
     /**
@@ -121,6 +139,5 @@ public class SistemInventoryIT {
         instance.menampilkanHalamanBarang();
         // TODO review the generated test code and remove the default call to fail.
 
-    }
-    
+    }   
 }
