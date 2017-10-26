@@ -40,6 +40,27 @@ public class DataBarang {
         }
     }
     
+//    public boolean tambahBarang(String kode, String nama, String kategori, String harga, String stock, String ms, String rp){
+//        connect = connectDB();
+//        if(connect){ //kalau bisa konek
+//            try {
+//                String sql="INSERT INTO Inventory (Kode, NamaBRG, Kategori, Harga, Stock, MS, RP) VALUES"
+//                    +"('"+kode+"',"
+//                    +"'"+nama+"',"
+//                    + "'"+kategori+"',"
+//                    + "'"+harga+"',"
+//                    + "'"+stock+"',"
+//                    + "'"+ms+"',"
+//                    +"'"+rp+"')";
+//                int berhasil = stmt.executeUpdate(sql);
+//                return true;
+//            } catch (SQLException errMsg) {
+//                System.out.println("Kesalahan DataBarang.tambahBarang : " + errMsg.getMessage());
+//                return false;
+//            }
+//        } else return false;
+//    }
+    
     public Object[][] lihatBarang(){
         connect = connectDB();
         Object[][] dataBarang = new Object[10][7];
@@ -64,6 +85,114 @@ public class DataBarang {
             }
         }
         return dataBarang;
+    }
+    
+//    public boolean ubahBarang(String kode, String nama, String kategori, String harga, String stock, String ms, String rp){
+//        connect = connectDB();
+//        if(connect){ //kalau bisa konek
+//            try {
+//                String sql="UPDATE Inventory SET "
+//                    +"NamaBRG = '"+nama+"',"
+//                    +"Kategori = '"+kategori+"',"
+//                    +"Harga = '"+harga+"',"
+//                    +"Stock = '"+stock+"',"
+//                    +"MS = '"+ms+"',"
+//                    +"RP = '"+rp+"' "
+//                    +"WHERE Kode = '"+kode+"';";
+//                
+//                int berhasil = stmt.executeUpdate(sql);
+//                return true;
+//            } catch (SQLException errMsg) {
+//                System.out.println("Kesalahan DataBarang.ubahBarang : " + errMsg.getMessage());
+//                return false;
+//            }
+//        } else return false;
+//    }
+    
+//    public boolean hapusBarang(String kode){
+//        connect = connectDB();
+//        if(connect){ //kalau bisa konek
+//            try {
+//                int berhasil = stmt.executeUpdate("DELETE FROM Inventory WHERE kode='"+kode+"';");
+//                return true;
+//            } catch (SQLException errMsg) {
+//                System.out.println("Kesalahan DataBarang.hapusBarang : " + errMsg.getMessage());
+//                return false;
+//            }
+//        } else return false;
+//    }
+    
+    public int getTotal(String Kode, String Kategori, String Nama, String Harga, String Stock, String MS, String RP){
+        connect = connectDB();
+        if(connect) {
+            try {
+                int row = 0;
+                String sql = "SELECT COUNT(*) AS total FROM Inventory WHERE " +
+                        " Kode = '" + Kode + 
+                        "' AND Kategori = '" + Kategori +
+                        "' AND NamaBRG = '" + Nama +
+                        "' AND Harga = '" + Harga + 
+                        "' AND Stock = '" + Stock + 
+                        "' AND MS = '" + MS + 
+                        "' AND RP = '" + RP + 
+                        "'";
+                ResultSet rsBarang = stmt.executeQuery(sql);
+                if(rsBarang.next())
+                {
+                    row = rsBarang.getInt("total");
+                }
+                return row;
+            } catch (SQLException errMsg) {
+                System.out.println("Kesalahan DataBarang.getTotal : " + errMsg.getMessage());
+                return 0;
+            }
+        } else {
+            return 0;
+        }
+    }
+    
+    //public int getTotal(String Kode, String Kategori, String Nama, String Harga, String Stock, String MS, String RP){
+    public int getTotal2(String Kode){
+        connect = connectDB();
+        if(connect) {
+            try {
+                int row = 0;
+                String sql = "SELECT COUNT(*) AS total FROM Inventory WHERE " +
+                        " Kode = '" + Kode + "'";
+                ResultSet rsBarang = stmt.executeQuery(sql);
+                if(rsBarang.next())
+                {
+                    row = rsBarang.getInt("total");
+                }
+                return row;
+            } catch (SQLException errMsg) {
+                System.out.println("Kesalahan DataBarang.getTotal2 : " + errMsg.getMessage());
+                return 0;
+            }
+        } else {
+            return 0;
+        }
+    }
+    
+    public int getTotal3(){
+        connect = connectDB();
+        if(connect) {
+            try {
+                int row = 0;
+                String sql = "SELECT COUNT(*) AS total FROM Inventory";
+                ResultSet rsBarang = stmt.executeQuery(sql);
+                if(rsBarang.next())
+                {
+                    row = rsBarang.getInt("total");
+                }
+                return row;
+            } catch (SQLException errMsg) {
+                System.out.println("Kesalahan DataBarang.getTotal2 : " + errMsg.getMessage());
+                return 0;
+            }
+        } else {
+            return 0;
+        }
     }
     
     public boolean crdBarang(String sql){
