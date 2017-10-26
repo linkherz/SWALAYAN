@@ -73,7 +73,7 @@ public class AkunInventoryIT {
         String password = "789";
         String dicari = "Role";
         AkunInventory instance = new AkunInventory();
-        String expResult = "personal";
+        String expResult = "user";
         String result = instance.getAkun(username, password, dicari);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -96,6 +96,16 @@ public class AkunInventoryIT {
     @Test
     public void testTambahAkun2() {
         System.out.println("tambahAkun2");
+        String sql = "INSERT INTO Account VALUES ('kppwqze', '156', 'nama', 'user');";
+        AkunInventory instance = new AkunInventory();
+        boolean expResult = false;
+        boolean result = instance.tambahAkun(sql);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    @Test
+    public void testTambahAkun3() {
+        System.out.println("tambahAkun3");
         String sql = "INSERT INTO Account VALUES ('kppwqze', '156', 'kfssel', 'user', '19');";
         AkunInventory instance = new AkunInventory();
         boolean expResult = false;
@@ -125,12 +135,11 @@ public class AkunInventoryIT {
     @Test
     public void testHapusAkun() {
         System.out.println("hapusAkun");
-        String sql = "DELETE FROM Account WHERE Username='';";
+        String sql = "DELETE FROM Account WHERE Username='kppwqze';";
         AkunInventory instance = new AkunInventory();
         boolean expResult = true;
         boolean result = instance.hapusAkun(sql);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
-    
 }
