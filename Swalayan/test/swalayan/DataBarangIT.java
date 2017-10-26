@@ -68,13 +68,13 @@ public class DataBarangIT {
      */
     @Test
     public void testCrdBarang() {
+        DataBarang instance = new DataBarang();
         System.out.println("crdBarang");
         String sql = "";
-        DataBarang instance = new DataBarang();
+        
         boolean expResult = false;
         boolean result = instance.crdBarang(sql);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-    }
-    
+    }   
 }
